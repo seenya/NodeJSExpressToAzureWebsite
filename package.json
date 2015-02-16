@@ -1,0 +1,22 @@
+{
+  "name": "NodeJSExpressToAzureWebsite",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js",
+    "start-dev": "npm run watch",
+    "watch": "npm run watch-server & npm run watch-css",
+    "watch-server": "nodemon --ignore public/ --ignore test/ app.js",
+    "lint": "jshint .",
+    "build-css": "node-sass ./sass/site.scss ./public/css/site.css",
+    "watch-css": "nodemon -e scss -x npm run build-css"
+  },
+  "dependencies": {
+    "express": "3.3.4",
+    "jade": "*"
+  },
+  "devDependencies": {
+    "node-sass": "~2.0.1",
+    "nodemon": "~1.3.7"
+  }
+}
